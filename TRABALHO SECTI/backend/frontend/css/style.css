@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    background: url("../images/background.png");
+    background-size: cover; /* Para garantir que a imagem de fundo cubra toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    color: white;
+    height: 100vh; /* Define a altura do corpo para 100% da altura da viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Evita a rolagem da página */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Certifica-se de que o contêiner ocupe 100% da largura */
+    height: 100%; /* Certifica-se de que o contêiner ocupe 100% da altura */
+    max-width: 600px; /* Limita a largura máxima do chat e do login */
+}
+
+.login {
+    width: 100%;
+    max-width: 330px;
+    background-color: #f0f0f0; /* Cor de fundo mais clara para o formulário de login */
+    border-radius: 5px;
+    padding: 20px;
+    display: block; /* Certifica-se de que o formulário de login esteja visível */
+}
+
+.login > h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Cor do texto do título mais escura para contraste */
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login__input {
+    border: none;
+    padding: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #fff; /* Cor de fundo clara para o campo de entrada */
+    color: #333; /* Cor do texto no campo de entrada mais escura */
+    outline: none;
+    border-radius: 5px;
+}
+
+.login__input:focus {
+    outline: 2px solid #007bff; /* Cor de foco mais visível */
+}
+
+.login__button {
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background-color: #007bff; /* Cor de fundo azul mais clara para o botão */
+    cursor: pointer;
+    color: #fff; /* Cor do texto no botão clara */
+}
+
+.login__button:hover {
+    background-color: #0056b3; /* Cor do botão quando hover */
+}
+
+.chat {
+    background-color: #f5f5f5; /* Cor de fundo mais clara para a área de chat */
+    width: 100%;
+    height: 500px; /* Altura fixa para a área de chat */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 100%;
+    display: none; /* Oculta o chat inicialmente */
+}
+
+.chat__messages {
+    background-color: #ffffff; /* Cor de fundo branca para as mensagens */
+    flex: 1; /* Ocupa o espaço restante na altura do chat */
+    padding: 15px;
+    overflow-y: auto; /* Rolagem automática se necessário */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid #ddd; /* Linha de divisão entre mensagens e o formulário de entrada */
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.message__user {
+    font-weight: bold;
+    color: #333; /* Cor do nome do usuário mais escura */
+    margin-bottom: 5px;
+}
+
+.message__bubble {
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.message__bubble::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+}
+
+.message__bubble--user {
+    background-color: #007bff; /* Cor de fundo azul clara para mensagens do usuário */
+    color: #fff; /* Cor do texto mais clara */
+    align-self: flex-end;
+}
+
+.message__bubble--user::after {
+    border-left: 10px solid #007bff;
+    top: 0;
+    right: -10px;
+    transform: translateY(-50%);
+}
+
+.message__bubble--support {
+    background-color: #4caf50; /* Cor de fundo verde clara para mensagens de suporte */
+    color: #fff; /* Cor do texto mais clara */
+    align-self: flex-start;
+}
+
+.message__bubble--support::after {
+    border-right: 10px solid #4caf50;
+    top: 0;
+    left: -10px;
+    transform: translateY(-50%);
+}
+
+.chat__form {
+    display: flex;
+    border-top: 1px solid #ddd; /* Linha de divisão mais clara entre o formulário e as mensagens */
+    padding: 10px;
+    background-color: #f5f5f5; /* Cor de fundo mais clara para o formulário */
+}
+
+.chat__input {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #e0e0e0; /* Cor de fundo clara para o campo de entrada */
+    color: #333; /* Cor do texto no campo de entrada mais escura */
+    border-radius: 5px;
+    outline: none;
+}
+
+.chat__input:focus {
+    outline: 2px solid #007bff; /* Cor de foco mais visível */
+}
+
+.chat__button {
+    border: none;
+    padding: 15px;
+    margin-left: 10px;
+    font-size: 1rem;
+    background-color: #007bff; /* Cor de fundo azul mais clara para o botão */
+    color: #fff; /* Cor do texto no botão clara */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.chat__button:hover {
+    background-color: #0056b3; /* Cor do botão quando hover */
+}
